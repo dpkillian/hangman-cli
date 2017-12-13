@@ -1,0 +1,22 @@
+{
+  "name": "hangman-cli",
+  "version": "1.0.0",
+  "description": "Traditional Hangman Game meant to be run at the command line (written in node.js)",
+  "main": "hangman-cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpkillian/hangman-cli.git"
+  },
+  "author": "David Killian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpkillian/hangman-cli/issues"
+  },
+  "homepage": "https://github.com/dpkillian/hangman-cli#readme",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
