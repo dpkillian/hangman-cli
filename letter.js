@@ -2,28 +2,29 @@
 var lettersToDisplay = function(word, correctGuesses){
 	this.gameWord = word;
 	this.goodLetters = correctGuesses;
-	this.displayText = " ";
+	this.displayText = "";
 	this.winner = false;
+	// parseDisplay function displays dashes or letters on screen
 	this.parseDisplay = function(){
-		var shown = " ";
+		var shown = "";
 
-		if(this.goodLetters == undefined){
+		if(this.goodLetters === undefined){
 			for(var i = 0; i < this.gameWord.length; i++){
-				shown += "_";
+				shown += " _ ";
 			}
 		} else {
 
 			for(var i = 0; i < this.gameWord.length; i++){
 				var letterWasFound = false;
 				for(var j = 0; j < this.goodLetters.length; j++){
-					if(this.gameWord[i] == this.goodLetters[j]){
-						shown+= this.goodLetters[j];
+					if(this.gameWord[i] === this.goodLetters[j]){
+						shown += this.goodLetters[j];
 						letterWasFound = true;
 					}
 				}
 
 				if(!letterWasFound){
-					shown+="_";
+					shown += " _ ";
 				}
 			}
 
@@ -32,7 +33,7 @@ var lettersToDisplay = function(word, correctGuesses){
 		this.displayText = shown.trim();
 		console.log(this.displayText);
 
-		if(this.displayText == this.gameWord){
+		if(this.displayText === this.gameWord){
 			this.winner = true;
 		}
 	}

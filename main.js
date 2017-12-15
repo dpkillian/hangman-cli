@@ -13,7 +13,7 @@ var lettersGuessed = [];
 var lettersCorrect = [];
 var displayHangman;
 
-// Game object
+// Game object containing values from wordList in game.js file, total guesses allowed and a value for the current word
 var game = {
 
 	wordArray: wordList,
@@ -38,7 +38,7 @@ var game = {
 
 
 function promptUser(){
-	console.log(" ");
+	console.log("");
 
 	if(game.guessesRemaining > 0){
 		inquirer.prompt([
@@ -66,7 +66,7 @@ function promptUser(){
 			var letterInWord = checkLetter(inputLetter, game.currentWord);
 
 			if(letterInWord){
-				lettersGuessed.push(inputLetter);
+				lettersCorrect.push(inputLetter);
 
 				displayHangman = new lettersToDisplay(game.currentWord, lettersCorrect);
 				displayHangman.parseDisplay();
