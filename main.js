@@ -3,7 +3,7 @@ var inquirer 			= require("inquirer");
 
 // Link to local Contructor resources
 var wordList 			= require("./game.js");
-var lettersToDisplay 	= require("./letters.js");
+var lettersToDisplay 	= require("./letter.js");
 var checkLetter			= require("./word.js");
 
 //  Global variables
@@ -17,12 +17,14 @@ var displayHangman;
 var game = {
 
 	wordArray: wordList,
-	guessesRemaining: 6;
-	currentWord: null
+	guessesRemaining: 6,
+	currentWord: null,
 
 	startGame: function(){
 		this.guessesRemaining = 6;
-		this.currentWord = this.wordArray(Math.floor(Math.random() * this.wordArray.length));
+   		var j = Math.floor(Math.random() * this.wordArray.length);
+    	this.currentWord = this.wordArray[j];
+
 		console.log("Take a guess at the Halloween inspired word...");
 
 		displayHangman = new lettersToDisplay(this.currentWord);
@@ -39,7 +41,7 @@ function promptUser(){
 	console.log(" ");
 
 	if(game.guessesRemaining > 0){
-		inquirer.promt([
+		inquirer.prompt([
 		{
 			type: "value",
 			name: "letter",
@@ -77,7 +79,7 @@ function promptUser(){
 					console.log("Letters guessed: " + lettersGuessed);
 					promptUser();			
 				}
-			}
+
 
 		} else {
 			game.guessesRemaining--;
@@ -86,7 +88,8 @@ function promptUser(){
 			console.log("Guesses remaining: " + game.guessesRemaining);
 			console.log("Letters guessed: " + lettersGuessed);
 			promptUser();						
-		}
+			}
+		}	
 	
 	});
 

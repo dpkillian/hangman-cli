@@ -8,4 +8,4 @@ function checkLetter(letter, word){
 	}
 }
 
-modules.export = checkLetter;
+module.exports = checkLetter;
