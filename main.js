@@ -123,7 +123,8 @@ function promptUser(){
 } else {
 
 	console.log("Sorry!  You ran out of guesses...");
-	console.log("The word you were trying to uncover was " + game.currentWord + ".");
+	console.log("The word you were trying to uncover was: " + game.currentWord + ".");
+	console.log("\n--------------------------------------");
 }
 
 }
