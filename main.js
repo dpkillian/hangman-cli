@@ -20,13 +20,16 @@ var game = {
 	guessesRemaining: 6,
 	currentWord: null,
 
+	// startgame function sets guesses, picks a random word from the wordlist and console logs a start message
 	startGame: function(){
 		this.guessesRemaining = 6;
    		var j = Math.floor(Math.random() * this.wordArray.length);
     	this.currentWord = this.wordArray[j];
+		console.log("\n--------------------------------------");
+		console.log("Welcome to HangSpider, the CLI version.");
+		console.log("Take a guess at the Halloween inspired word...pick a letter (a thru z):");
 
-		console.log("Take a guess at the Halloween inspired word...");
-
+		// pass current word from game object to lettersToDisplay function
 		displayHangman = new lettersToDisplay(this.currentWord);
 		displayHangman.parseDisplay();
 		console.log("Guesses Remaining: " + game.guessesRemaining);
