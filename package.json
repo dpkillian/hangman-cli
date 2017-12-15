@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dpkillian/hangman-cli#readme",
   "dependencies": {
+    "inquirer": "^4.0.1",
     "prompt": "^1.0.0"
   }
 }
